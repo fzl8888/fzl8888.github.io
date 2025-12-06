@@ -59,8 +59,8 @@ export const PUBLICATIONS: Publication[] = [
     links: [{ name: "Paper", url: "#" }],
     tags: ["SCI/SSCI", "JCR Q1", "IF 4.9"],
     // Please put 'pub1.png' in your public folder
-    image: "/pub1.png", 
-    abstract: "This paper introduces KnowSTU, a novel framework leveraging Retrieval-Augmented Generation (RAG) and fine-tuned Large Language Models to accurately diagnose student behavioral problems in educational settings."
+    image: "/knowstu.png", 
+    abstract: "This paper introduces KnowSTU, a system leveraging Retrieval-Augmented Generation (RAG) and fine-tuned Large Language Models to diagnose student behavioral problems in educational settings."
   },
   {
     title: "Why Did the AI Suggest That? Designing an Explainable Educational Counseling System",
