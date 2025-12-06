@@ -8,12 +8,15 @@ export const VisitorStats: React.FC = () => {
     if (containerRef.current && containerRef.current.childElementCount === 0) {
       const script = document.createElement('script');
       
-      // ClustrMaps script
-      script.src = "//clustrmaps.com/map_v2.js?d=BvrqfJ_iFitGwQg1JEUMFWdUOSNsrbcZswvS-BWNJtQ&cl=ffffff&w=a";
+      // Set the ClustrMaps specific ID
       script.id = "clustrmaps";
-      script.async = true;
+      
+      // Set your specific source URL
+      script.src = "//clustrmaps.com/map_v2.js?d=BvrqfJ_iFitGwQg1JEUMFWdUOSNsrbcZswvS-BWNJtQ&cl=ffffff&w=a";
+      
       script.type = "text/javascript";
       
+      // Append to the container
       containerRef.current.appendChild(script);
     }
   }, []);
@@ -24,12 +27,14 @@ export const VisitorStats: React.FC = () => {
         <span>🌍 Visitor Map</span>
       </h3>
       
-      {/* Map Container - ClustrMaps injects the map here */}
+      {/* Map Container */}
       <div 
         ref={containerRef} 
-        className="overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow"
-        style={{ minHeight: '200px', minWidth: '200px' }}
-      />
+        className="flex justify-center items-center overflow-hidden rounded-lg bg-white p-2 shadow-sm hover:shadow-md transition-shadow"
+        style={{ minHeight: '150px' }}
+      >
+        {/* The script will inject the map here */}
+      </div>
       
       <p className="text-xs text-slate-400 mt-4">
         Showing real-time visits from around the world.
