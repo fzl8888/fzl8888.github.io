@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
@@ -19,7 +20,7 @@ const App: React.FC = () => {
     <div className="min-h-screen font-sans">
       <Navbar />
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-28 pb-10 space-y-24">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-10 space-y-24">
         
         {/* === ABOUT SECTION === */}
         <section id="about" className="scroll-mt-28">
@@ -82,35 +83,39 @@ const App: React.FC = () => {
               <div className="h-px bg-slate-200 flex-1"></div>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-16">
               {PUBLICATIONS.map((pub, idx) => (
-                <div key={idx} className="flex flex-col md:flex-row gap-6 items-start">
+                <div key={idx} className="flex flex-col lg:flex-row gap-8 items-start">
                   
                   {/* Left: Image with Hover Overlay */}
-                  <div className="group relative w-full md:w-64 aspect-video rounded-lg overflow-hidden shadow-md flex-shrink-0 bg-slate-100 border border-slate-200 cursor-help">
+                  {/* Increased width to w-96 (approx 384px), Aspect Ratio 4:3, Object-Top to show header */}
+                  <div className="group relative w-full lg:w-96 aspect-[4/3] rounded-lg overflow-hidden shadow-md flex-shrink-0 bg-slate-100 border border-slate-200 cursor-help">
                     <img 
                       src={pub.image || '/paper-placeholder.png'} 
                       alt={pub.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => {
-                        // Fallback if image not found
-                        (e.target as HTMLImageElement).src = 'https://placehold.co/600x400?text=Paper+Preview';
+                        (e.target as HTMLImageElement).src = 'https://placehold.co/800x600?text=Paper+Preview';
                       }}
                     />
-                    {/* Hover Overlay with Abstract */}
-                    <div className="absolute inset-0 bg-slate-900/90 p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-xs text-slate-200 text-center leading-relaxed line-clamp-6">
-                        {pub.abstract || "Detailed abstract available in the full paper."}
-                      </p>
+                    
+                    {/* Hover Overlay with Abstract - Scrollable */}
+                    <div className="absolute inset-0 bg-slate-900/95 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="overflow-y-auto max-h-full custom-scrollbar pr-2">
+                        <p className="text-sm text-slate-200 leading-relaxed text-left">
+                          <span className="block text-xs font-bold text-slate-400 uppercase mb-2 tracking-wider">Abstract</span>
+                          {pub.abstract || "Detailed abstract available in the full paper."}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Right: Content */}
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-slate-900 leading-tight">
+                  <div className="flex-1 py-2">
+                    <h3 className="text-xl font-bold text-slate-900 leading-tight">
                       {pub.title}
                     </h3>
-                    <p className="text-slate-600 mt-2 text-sm leading-relaxed">
+                    <p className="text-slate-600 mt-3 text-base leading-relaxed">
                       {pub.authors.split('Zhilin Fan').map((part, i, arr) => (
                         <React.Fragment key={i}>
                           {part}
@@ -118,33 +123,33 @@ const App: React.FC = () => {
                         </React.Fragment>
                       ))}
                     </p>
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-3 text-sm">
-                      <span className="italic font-medium text-academic-700">{pub.venue}</span>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4 text-sm">
+                      <span className="italic font-medium text-academic-700 text-base">{pub.venue}</span>
                       <span className="text-slate-300">|</span>
                       <span className="text-slate-500">{pub.year}</span>
                       
                       {pub.status && (
-                        <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded-full border border-slate-200">
+                        <span className="px-2.5 py-0.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-200">
                           {pub.status}
                         </span>
                       )}
 
                       {pub.tags?.map(tag => (
-                        <span key={tag} className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">
+                        <span key={tag} className="px-2.5 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100">
                           {tag}
                         </span>
                       ))}
                     </div>
                     
                     {pub.links.length > 0 && (
-                      <div className="flex gap-4 mt-4">
+                      <div className="flex gap-4 mt-6">
                         {pub.links.map(link => (
                           <a 
                             key={link.name} 
                             href={link.url}
-                            className="text-xs font-bold text-academic-accent hover:underline flex items-center gap-1.5 transition-colors hover:text-blue-700"
+                            className="text-sm font-bold text-academic-accent hover:underline flex items-center gap-1.5 transition-colors hover:text-blue-700"
                           >
-                            <FileText size={14} /> {link.name}
+                            <FileText size={16} /> {link.name}
                           </a>
                         ))}
                       </div>
@@ -205,7 +210,7 @@ const App: React.FC = () => {
                 <div 
                   key={idx} 
                   className={`group relative rounded-xl overflow-hidden shadow-md cursor-pointer ${
-                    hobby.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''
+                    hobby.size === 'large' ? 'md:col-span-2 md:row-span-2 aspect-square md:aspect-auto' : 'aspect-square'
                   }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>

@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   // PLACE YOUR FILE IN 'public/profile.jpg'
   photoUrl: "/profile.jpg", 
   
-  bio: `I am currently a Master's student at the School of Educational Technology, Beijing Normal University, advised by Dr. Yu Lu and Dr. Penghe Chen. Before that, I received my B.S. in Computer Science from Nanjing University of Information Science and Technology (Rank 1/47).
+  bio: `I am currently a Master's student at the School of Educational Technology, Beijing Normal University, advised by Dr. Yu Lu* and Dr. Penghe Chen†. Before that, I received my B.S. in Computer Science from Nanjing University of Information Science and Technology (Rank 1/47).
   
   My research interests lie at the intersection of Artificial Intelligence and Education. Specifically, I focus on Dialogue Systems in Education, developing chatbots using rule-based policies or LLMs to scaffold complex learning tasks. I also specialize in Explainable AI (XAI) in Education, designing trustworthy AI interfaces that provide transparent explanations to enhance user trust.`,
   seeking: "I am actively seeking Ph.D. opportunities for Fall 2026 in Educational Technology, HCI, or Computer Science, focusing on Human-AI Interaction in learning contexts."
@@ -60,7 +60,7 @@ export const PUBLICATIONS: Publication[] = [
     tags: ["SCI/SSCI", "JCR Q1", "IF 4.9"],
     // Please put 'pub1.png' in your public folder
     image: "/knowstu.png", 
-    abstract: "This paper introduces KnowSTU, a system leveraging Retrieval-Augmented Generation (RAG) and fine-tuned Large Language Models to diagnose student behavioral problems in educational settings."
+    abstract: "This paper introduces KnowSTU, a system leveraging Retrieval-Augmented Generation (RAG) and fine-tuned Large Language Models to  diagnose student behavioral problems in educational settings."
   },
   {
     title: "Why Did the AI Suggest That? Designing an Explainable Educational Counseling System",
