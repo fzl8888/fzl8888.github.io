@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
+//https://clustrmaps.com/site/1c8n4 查看view data
 export const VisitorStats: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 

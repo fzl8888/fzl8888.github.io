@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   // PLACE YOUR FILE IN 'public/profile.jpg'
   photoUrl: "/profile.jpg", 
   
-  bio: `I am currently a Master's student at the School of Educational Technology, Beijing Normal University, advised by Dr. Yu Lu* and Dr. Penghe Chen†. Before that, I received my B.S. in Computer Science from Nanjing University of Information Science and Technology (Rank 1/47).
+  bio: `I am currently a Master's student at the School of Educational Technology, Beijing Normal University, advised by Prof. Yu Lu* and Dr. Penghe Chen†. Before that, I received my B.S. in Computer Science from Nanjing University of Information Science and Technology (Rank 1/47).
   
   My research interests lie at the intersection of Artificial Intelligence and Education. Specifically, I focus on Dialogue Systems in Education, developing chatbots using rule-based policies or LLMs to scaffold complex learning tasks. I also specialize in Explainable AI (XAI) in Education, designing trustworthy AI interfaces that provide transparent explanations to enhance user trust.`,
   seeking: "I am actively seeking Ph.D. opportunities for Fall 2026 in Educational Technology, HCI, or Computer Science, focusing on Human-AI Interaction in learning contexts."
@@ -108,14 +108,14 @@ export const PUBLICATIONS: Publication[] = [
 export const PROJECTS: Project[] = [
   {
     title: "AI Moral Teacher (NSFC)",
-    role: "Full-stack Developer & Maintainer",
+    role: "Participant",
     duration: "2023 – 2024",
-    description: "A task-oriented dialogue system based on knowledge graphs and case-based reasoning to diagnose students’ problem behavior. Engineered the architecture using Java SSM and managed containerized deployment.",
+    description: "Maintaining a task-oriented dialogue system based on knowledge graphs and case-based reasoning to diagnose students’ problem behavior. Engineered the architecture using Java SSM and managed containerized deployment.",
     techStack: ["Java SSM", "JavaScript", "Docker", "Neo4j"]
   },
   {
     title: "LLM-based Pedagogical Agent",
-    role: "Lead Researcher",
+    role: "Participant",
     duration: "2023 – 2024",
     description: "Developed a conversational AI agent powered by GPT-3.5-turbo using Plugins to scaffold students in generating high-quality mathematical questions. Evaluated effectiveness on problem-posing fluency.",
     techStack: ["Python", "OpenAI API", "Flask", "Prompt Engineering"]
@@ -127,7 +127,7 @@ export const EDUCATION: Education[] = [
     school: "Beijing Normal University",
     degree: "M.Phil. in Educational Technology",
     duration: "Sept 2023 – June 2026 (Expected)",
-    details: ["GPA: 3.7/4.0", "Supervisors: Dr. Yu Lu, Dr. Penghe Chen"]
+    details: ["GPA: 3.7/4.0", "Supervisors: Prof. Yu Lu, Dr. Penghe Chen"]
   },
   {
     school: "Nanjing University of Information Science and Technology",
