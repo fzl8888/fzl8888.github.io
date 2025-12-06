@@ -1,6 +1,6 @@
+
 import { NewsItem, Publication, Project, Education, SkillCategory, Hobby } from './types';
 import React from 'react';
-import { BookOpen, Award, Code, GraduationCap } from 'lucide-react';
 
 export const PERSONAL_INFO = {
   name: "Zhilin Fan",
@@ -9,9 +9,13 @@ export const PERSONAL_INFO = {
   location: "Beijing, China",
   email: "fanzhilin@mail.bnu.edu.cn",
   scholarUrl: "#", // Add your Google Scholar Link
-  cvUrl: "#", // Add your PDF Link
-  // Replace this with your actual photo URL
-  photoUrl: "https://picsum.photos/400/500", 
+  
+  // PLACE YOUR FILE IN 'public/cv.pdf'
+  cvUrl: "/cv.pdf", 
+  
+  // PLACE YOUR FILE IN 'public/profile.jpg'
+  photoUrl: "/profile.jpg", 
+  
   bio: `I am currently a Master's student at the School of Educational Technology, Beijing Normal University, advised by Dr. Yu Lu and Dr. Penghe Chen. Before that, I received my B.S. in Computer Science from Nanjing University of Information Science and Technology (Rank 1/47).
   
   My research interests lie at the intersection of Artificial Intelligence and Education. Specifically, I focus on Dialogue Systems in Education, developing chatbots using rule-based policies or LLMs to scaffold complex learning tasks. I also specialize in Explainable AI (XAI) in Education, designing trustworthy AI interfaces that provide transparent explanations to enhance user trust.`,
@@ -143,29 +147,29 @@ export const HOBBIES: Hobby[] = [
   {
     title: "Fitness & Bodybuilding",
     description: "Passionate about staying fit and pushing limits.",
-    // Placeholder image: Gym/Weights
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop", 
+    // PLACE YOUR FILE IN 'public/gym.jpg'
+    image: "/gym.jpg", 
     size: "large"
   },
   {
     title: "Hiking",
     description: "Exploring nature on weekends.",
-    // Placeholder image: Hiking
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop",
+    // PLACE YOUR FILE IN 'public/hiking.jpg'
+    image: "/hiking.jpg",
     size: "small"
   },
   {
     title: "Photography",
     description: "Capturing moments in Beijing.",
-    // Placeholder image: Camera/City
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop",
+    // PLACE YOUR FILE IN 'public/photo.jpg'
+    image: "/photo.jpg",
     size: "medium"
   },
   {
     title: "Reading",
     description: "Sci-Fi and Philosophy.",
-    // Placeholder image: Books
-    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800&auto=format&fit=crop",
+    // PLACE YOUR FILE IN 'public/reading.jpg'
+    image: "/reading.jpg",
     size: "small"
   }
 ];
