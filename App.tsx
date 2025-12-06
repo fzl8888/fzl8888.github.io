@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { NewsTicker } from './components/NewsTicker';
 import { Footer } from './components/Footer';
+import { VisitorStats } from './components/VisitorStats'; // Import the new component
 import { PERSONAL_INFO, NEWS, PUBLICATIONS, PROJECTS, EDUCATION, SKILLS, HOBBIES } from './constants';
 import { MapPin, Mail, GraduationCap, Code, ExternalLink, FileText, Camera } from 'lucide-react';
 
@@ -304,6 +305,8 @@ const App: React.FC = () => {
              </a>
           </div>
         </section>
+        {/* === VISITOR STATS SECTION === */}
+        <VisitorStats />
 
       </main>
 
