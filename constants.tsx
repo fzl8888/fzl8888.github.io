@@ -57,7 +57,10 @@ export const PUBLICATIONS: Publication[] = [
     venue: "IEEE Transactions on Learning Technologies (TLT)",
     year: "2025",
     links: [{ name: "Paper", url: "#" }],
-    tags: ["SCI/SSCI", "JCR Q1", "IF 4.9"]
+    tags: ["SCI/SSCI", "JCR Q1", "IF 4.9"],
+    // Please put 'pub1.png' in your public folder
+    image: "/pub1.png", 
+    abstract: "This paper introduces KnowSTU, a novel framework leveraging Retrieval-Augmented Generation (RAG) and fine-tuned Large Language Models to accurately diagnose student behavioral problems in educational settings."
   },
   {
     title: "Why Did the AI Suggest That? Designing an Explainable Educational Counseling System",
@@ -65,7 +68,10 @@ export const PUBLICATIONS: Publication[] = [
     venue: "International Conference on Artificial Intelligence in Education (AIED)",
     year: "2025",
     status: "Full Paper",
-    links: [{ name: "Paper", url: "#" }]
+    links: [{ name: "Paper", url: "#" }],
+    // Please put 'pub2.png' in your public folder
+    image: "/pub2.png",
+    abstract: "We present an explainable AI system designed for educational counseling. The study investigates how different explanation styles impact user trust and acceptance of AI-driven advice."
   },
   {
     title: "PBChat: Enhance student’s problem behavior diagnosis with large language model",
@@ -73,14 +79,19 @@ export const PUBLICATIONS: Publication[] = [
     venue: "International Conference on Artificial Intelligence in Education (AIED)",
     year: "2024",
     status: "Full Paper",
-    links: [{ name: "Paper", url: "#" }]
+    links: [{ name: "Paper", url: "#" }],
+    // Please put 'pub3.png' in your public folder
+    image: "/pub3.png",
+    abstract: "PBChat utilizes Large Language Models to simulate student interactions, helping teachers practice and improve their diagnostic skills regarding student problem behaviors."
   },
   {
     title: "Exploring the Impact of Interdisciplinary Learning Communities on Learners’ Collaborative Problem-Solving Abilities",
     authors: "Wenyu Yan, Chunlin Fan, Zhilin Fan, Ning Ma*",
     venue: "ICIET",
     year: "2025",
-    links: [{ name: "Paper", url: "#" }]
+    links: [{ name: "Paper", url: "#" }],
+    image: "/pub4.png",
+    abstract: "An empirical study exploring how structured interdisciplinary learning communities foster better collaborative problem-solving skills among learners in online environments."
   },
   {
     title: "Why should I trust this AI? The Effect of explainable AI on teachers using LLM-based educational question answering systems",
@@ -88,7 +99,9 @@ export const PUBLICATIONS: Publication[] = [
     venue: "British Journal of Educational Technology (BJET)",
     year: "In Prep",
     links: [],
-    status: "Working Paper"
+    status: "Working Paper",
+    image: "/pub5.png",
+    abstract: "This working paper examines the psychological effects of XAI on teachers' trust levels when using LLM-based tools for grading and question answering."
   }
 ];
 

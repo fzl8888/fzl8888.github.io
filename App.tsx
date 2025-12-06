@@ -77,56 +77,79 @@ const App: React.FC = () => {
         {/* === PUBLICATIONS SECTION === */}
         <section id="publications" className="scroll-mt-24 border-t border-slate-200 pt-16">
           <motion.div {...fadeInUp}>
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
               <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-wide">Publications</h2>
               <div className="h-px bg-slate-200 flex-1"></div>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-12">
               {PUBLICATIONS.map((pub, idx) => (
-                <div key={idx} className="group relative pl-4 border-l-2 border-transparent hover:border-academic-accent transition-colors">
-                  <h3 className="text-lg font-semibold text-slate-900 leading-tight">
-                    {pub.title}
-                  </h3>
-                  <p className="text-slate-600 mt-1 text-sm">
-                    {pub.authors.split('Zhilin Fan').map((part, i, arr) => (
-                      <React.Fragment key={i}>
-                        {part}
-                        {i < arr.length - 1 && <span className="font-bold text-slate-900 underline decoration-slate-300 underline-offset-2">Zhilin Fan</span>}
-                      </React.Fragment>
-                    ))}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-2 text-sm">
-                    <span className="italic font-medium text-academic-700">{pub.venue}</span>
-                    <span className="text-slate-400">•</span>
-                    <span className="text-slate-500">{pub.year}</span>
-                    
-                    {pub.status && (
-                      <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded-full border border-slate-200">
-                        {pub.status}
-                      </span>
-                    )}
-
-                    {pub.tags?.map(tag => (
-                      <span key={tag} className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div key={idx} className="flex flex-col md:flex-row gap-6 items-start">
                   
-                  {pub.links.length > 0 && (
-                    <div className="flex gap-3 mt-3">
-                      {pub.links.map(link => (
-                        <a 
-                          key={link.name} 
-                          href={link.url}
-                          className="text-xs font-bold text-academic-accent hover:underline flex items-center gap-1"
-                        >
-                          <FileText size={12} /> {link.name}
-                        </a>
+                  {/* Left: Image with Hover Overlay */}
+                  <div className="group relative w-full md:w-64 aspect-video rounded-lg overflow-hidden shadow-md flex-shrink-0 bg-slate-100 border border-slate-200 cursor-help">
+                    <img 
+                      src={pub.image || '/paper-placeholder.png'} 
+                      alt={pub.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        // Fallback if image not found
+                        (e.target as HTMLImageElement).src = 'https://placehold.co/600x400?text=Paper+Preview';
+                      }}
+                    />
+                    {/* Hover Overlay with Abstract */}
+                    <div className="absolute inset-0 bg-slate-900/90 p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-xs text-slate-200 text-center leading-relaxed line-clamp-6">
+                        {pub.abstract || "Detailed abstract available in the full paper."}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right: Content */}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 leading-tight">
+                      {pub.title}
+                    </h3>
+                    <p className="text-slate-600 mt-2 text-sm leading-relaxed">
+                      {pub.authors.split('Zhilin Fan').map((part, i, arr) => (
+                        <React.Fragment key={i}>
+                          {part}
+                          {i < arr.length - 1 && <span className="font-bold text-slate-900 underline decoration-slate-300 underline-offset-2">Zhilin Fan</span>}
+                        </React.Fragment>
+                      ))}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-3 text-sm">
+                      <span className="italic font-medium text-academic-700">{pub.venue}</span>
+                      <span className="text-slate-300">|</span>
+                      <span className="text-slate-500">{pub.year}</span>
+                      
+                      {pub.status && (
+                        <span className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded-full border border-slate-200">
+                          {pub.status}
+                        </span>
+                      )}
+
+                      {pub.tags?.map(tag => (
+                        <span key={tag} className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">
+                          {tag}
+                        </span>
                       ))}
                     </div>
-                  )}
+                    
+                    {pub.links.length > 0 && (
+                      <div className="flex gap-4 mt-4">
+                        {pub.links.map(link => (
+                          <a 
+                            key={link.name} 
+                            href={link.url}
+                            className="text-xs font-bold text-academic-accent hover:underline flex items-center gap-1.5 transition-colors hover:text-blue-700"
+                          >
+                            <FileText size={14} /> {link.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -190,6 +213,9 @@ const App: React.FC = () => {
                     src={hobby.image} 
                     alt={hobby.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                       (e.target as HTMLImageElement).src = 'https://placehold.co/600x600?text=Hobby';
+                    }}
                   />
                   <div className="absolute bottom-0 left-0 p-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 z-20 text-white">
                     <h3 className="font-bold text-lg">{hobby.title}</h3>
@@ -262,7 +288,7 @@ const App: React.FC = () => {
         <section id="contact" className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white scroll-mt-24">
           <h2 className="text-2xl font-bold mb-4">Let's Connect</h2>
           <p className="text-slate-300 mb-8 max-w-xl mx-auto">
-            I'm always open to discussing collaboration opportunities in AI for Education, especially regarding Ph.D. positions.
+            I'm always open to discussing collaboration opportunities in AI for Education and Learning Analytics.
           </p>
           <div className="flex justify-center gap-6">
              <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-100 transition-colors">
