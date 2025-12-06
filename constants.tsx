@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   university: "Beijing Normal University",
   location: "Beijing, China",
   email: "fanzhilin@mail.bnu.edu.cn",
-  scholarUrl: "#", // Add your Google Scholar Link
+  scholarUrl: "https://scholar.google.com/citations?user=rHRk76cAAAAJ&hl=en", // Add your Google Scholar Link
   
   // PLACE YOUR FILE IN 'public/cv.pdf'
   cvUrl: "/cv.pdf", 
@@ -152,24 +152,9 @@ export const HOBBIES: Hobby[] = [
     size: "large"
   },
   {
-    title: "Hiking",
-    description: "Exploring nature on weekends.",
-    // PLACE YOUR FILE IN 'public/hiking.jpg'
-    image: "/hiking.jpg",
-    size: "small"
-  },
-  {
-    title: "Photography",
-    description: "Capturing moments in Beijing.",
-    // PLACE YOUR FILE IN 'public/photo.jpg'
-    image: "/photo.jpg",
-    size: "medium"
-  },
-  {
-    title: "Reading",
-    description: "Sci-Fi and Philosophy.",
-    // PLACE YOUR FILE IN 'public/reading.jpg'
-    image: "/reading.jpg",
+    title: "Sprinting",
+    description: "Sprinting is my way to push my limits.",
+    image: "/sprinting.JPG",
     size: "small"
   }
 ];
