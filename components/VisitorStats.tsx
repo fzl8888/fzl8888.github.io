@@ -27,13 +27,20 @@ export const VisitorStats: React.FC = () => {
         <span>🌍 Visitor Map</span>
       </h3>
       
-      {/* Map Container */}
-      <div 
-        ref={containerRef} 
-        className="flex justify-center items-center overflow-hidden rounded-lg bg-white p-2 shadow-sm hover:shadow-md transition-shadow"
-        style={{ minHeight: '150px' }}
-      >
-        {/* The script will inject the map here */}
+      {/* 
+         FIX: 
+         1. Use w-full and max-w-4xl to ensure the container has actual width 
+            so the 'w=a' (adaptive) script works correctly.
+         2. Remove 'flex' from this wrapper to prevent content collapse.
+      */}
+      <div className="w-full max-w-4xl px-4 md:px-0">
+        <div 
+          ref={containerRef} 
+          className="overflow-hidden rounded-xl bg-white p-2 shadow-sm border border-slate-200 mx-auto"
+          style={{ minHeight: '300px' }}
+        >
+          {/* The script will inject the map here */}
+        </div>
       </div>
       
       <p className="text-xs text-slate-400 mt-4">

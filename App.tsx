@@ -305,6 +305,7 @@ const App: React.FC = () => {
              </a>
           </div>
         </section>
+        
         {/* === VISITOR STATS SECTION === */}
         <VisitorStats />
 
