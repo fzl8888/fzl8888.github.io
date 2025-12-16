@@ -95,7 +95,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: "Why should I trust this AI? The Effect of explainable AI on teachers using LLM-based educational question answering systems",
-    authors: "Zhilin Fan, Deliang Wang, Penghe Chen†, Yu Lu*",
+    authors: ", Yu Lu*, Zhilin Fan, Deliang Wang, Penghe Chen†",
     venue: "British Journal of Educational Technology (BJET)",
     year: "In Prep",
     links: [],

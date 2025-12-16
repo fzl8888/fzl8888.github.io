@@ -12,6 +12,8 @@ export interface Publication {
   links: { name: string; url: string }[];
   tags?: string[];
   status?: string; // e.g., "Full Paper", "In Preparation"
+  image?: string;
+  abstract?: string;
 }
 
 export interface Project {
